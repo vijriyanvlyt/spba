@@ -19,6 +19,8 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
+        'divisi_id',
         'email',
         'password',
     ];
@@ -33,12 +35,16 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function divisi(){
+        return $this->belongsTo(Divisi::class);
+    }
+
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 }
