@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Divisi;
+use App\Models\Perusahaan;
 use App\Models\User;
 
 class DatabaseSeeder extends Seeder
@@ -33,19 +34,25 @@ class DatabaseSeeder extends Seeder
         ]);
         
         User::create([
-            'name' => 'Vijriyani Velayati',
-            'username' => 'vijriyanvlyt',
+            'name' => 'Dwi Santika',
+            'username' => 'dwisantika',
             'divisi_id' => '1',
-            'email' => 'vijriyanvlyt@gmail.com',
+            'email' => 'dwisantika@gmail.com',
             'password' => bcrypt('12345')
         ]);
 
         User::create([
-            'name' => 'Rhizika Velajani Santoso',
-            'username' => 'rhizikaa',
+            'name' => 'Galih Andika',
+            'username' => 'galihandika',
             'divisi_id' => '3',
-            'email' => 'rhizikaa@gmail.com',
+            'email' => 'galihandika@gmail.com',
             'password' => bcrypt('54321')
+        ]);
+
+        Perusahaan::create([
+            'name'=>'CV. Indah Jaya',
+            'alamat'=>'Jln. Bunga Indah no.8, Malang, Jawa Timur, Indonesia',
+            'no_telp'=>'081234567890'
         ]);
         // \App\Models\User::factory(10)->create();
 

@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\KonsultanBeritaAcaraController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KonsultanUploadArsipController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -29,3 +31,7 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 Route::resource('/dashboard/users', AdminUserController::class)->middleware('is_admin');
+Route::resource('/dashboard/clients', AdminUserController::class)->middleware('is_admin');
+
+Route::resource('/dashboard/uploadarsip', KonsultanUploadArsipController::class)->middleware('is_konsultan');
+Route::resource('/dashboard/buatberitaacaras', KonsultanBeritaAcaraController::class)->middleware('is_konsultan');

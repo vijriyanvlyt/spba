@@ -28,13 +28,13 @@
       </h6>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">
+          <a class="nav-link {{ Request::is('dashboard/buatberitaacaras*') ? 'active' : '' }}" aria-current="page" href="/dashboard/buatberitaacaras/create">
             <span data-feather="file-plus" class="align-text-bottom"></span>
             Buat Berita Acara
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">
+          <a class="nav-link {{ Request::is('dashboard/uploadarsip*') ? 'active' : '' }}" aria-current="page" href="/dashboard/uploadarsip">
             <span data-feather="upload" class="align-text-bottom"></span>
             Upload Berita Acara
           </a>
@@ -56,7 +56,7 @@
       </ul>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/users*') ? 'active' : '' }}" aria-current="page" href="/dashboard/users">
+          <a class="nav-link" aria-current="page" href="#">
             <span data-feather="briefcase" class="align-text-bottom"></span>
             Kelola Client
           </a>

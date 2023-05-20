@@ -38,6 +38,10 @@ class User extends Authenticatable
     public function divisi(){
         return $this->belongsTo(Divisi::class);
     }
+    
+    public function beritaacara(){
+        return $this->hasMany(BeritaAcara::class);
+    }
 
     /**
      * The attributes that should be cast.
