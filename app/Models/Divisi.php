@@ -9,11 +9,15 @@ class Divisi extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name'
+    ];
+
     public function user(){
         return $this->hasMany(User::class);
     }
 
-    public function beritaacara(){
+    public function beritaAcara(){
         return $this->hasMany(BeritaAcara::class);
     }
 

@@ -9,7 +9,13 @@ class Perusahaan extends Model
 {
     use HasFactory;
 
-    public function beritaacara(){
+    protected $fillable = [
+        'name',
+        'alamat',
+        'no_telp',
+    ];
+
+    public function beritaAcara(){
         return $this->hasMany(BeritaAcara::class);
     }
 }

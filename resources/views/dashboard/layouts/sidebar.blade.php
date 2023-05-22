@@ -7,19 +7,21 @@
             Dashboard
           </a>
         </li>
-        <li class="nav-item disables">
-          <a class="nav-link" href="#sidemenu" data-bs-toggle = "collapse" aria-current="page">
-            <span data-feather="archive" class="align-text-bottom"></span>
-            Arsip Berita Acara 
-            <span data-feather="arrow-down-circle" class="align-text-right ms-4"></span>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/profiles*') ? 'active' : '' }}" aria-current="page" href="/dashboard/profiles">
+            <span data-feather="user" class="align-text-bottom"></span>
+            Profile Akun
           </a>
-          <ul class="nav collapse ms-1" id="sidemenu" data-bs-parent="#menu">
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-current="page"><span data-feather="server" class="align-text-bottom"></span> Divisi</a>
-              <a class="nav-link" href="#" aria-current="page"><span data-feather="globe" class="align-text-bottom"></span> Client</a>
-            </li>
-          </ul>
         </li>
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Arsip Berita Acara</span>
+        </h6>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard/byDivisis*') ? 'active' : '' }}" href="dashboard/byDivisis" aria-current="page"><span data-feather="archive" class="align-text-bottom"></span> Divisi</a>
+            <a class="nav-link {{ Request::is('dashboard/byClients*') ? 'active' : '' }}" href="dashboard/byClients" aria-current="page"><span data-feather="briefcase" class="align-text-bottom"></span> Client</a>
+          </li>
+        </ul>
       </ul>
 
       @can('konsultan')
@@ -28,13 +30,13 @@
       </h6>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/buatberitaacaras*') ? 'active' : '' }}" aria-current="page" href="/dashboard/buatberitaacaras/create">
+          <a class="nav-link {{ Request::is('dashboard/beritaAcaras/create') ? 'active' : '' }}" aria-current="page" href="/dashboard/beritaAcaras/create">
             <span data-feather="file-plus" class="align-text-bottom"></span>
             Buat Berita Acara
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/uploadarsip*') ? 'active' : '' }}" aria-current="page" href="/dashboard/uploadarsip">
+          <a class="nav-link {{ Request::is('dashboard/beritaAcaras') ? 'active' : '' }}" aria-current="page" href="/dashboard/beritaAcaras">
             <span data-feather="upload" class="align-text-bottom"></span>
             Upload Berita Acara
           </a>
@@ -56,9 +58,17 @@
       </ul>
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">
+          <a class="nav-link {{ Request::is('dashboard/perusahaans*') ? 'active' : '' }}" aria-current="page" href="/dashboard/perusahaans">
             <span data-feather="briefcase" class="align-text-bottom"></span>
             Kelola Client
+          </a>
+        </li>
+      </ul>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/divisis*') ? 'active' : '' }}" aria-current="page" href="/dashboard/divisis">
+            <span data-feather="clipboard" class="align-text-bottom"></span>
+            Kelola Divisi
           </a>
         </li>
       </ul>

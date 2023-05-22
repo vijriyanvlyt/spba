@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class BeritaAcara extends Model
 {
-    use HasFactory;
+    use HasFactory, HasApiTokens, Notifiable;
+
+    protected $guarded = 'id';
 
     protected $fillable = [
         'tanggal_kesepakatan',

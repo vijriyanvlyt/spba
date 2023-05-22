@@ -18,9 +18,9 @@
       @enderror
     </div>
     <div class="mb-3">
-      <label for="username" class="form-label">Username</label>
-      <input type="text" class="form-control @error('username')is-invalid @enderror" id="username" name="username" required value="{{ old('username') }}">
-      @error('username')
+      <label for="no_telp" class="form-label">Nomor Telepon</label>
+      <input type="text" class="form-control @error('no_telp')is-invalid @enderror" id="no_telp" name="no_telp" required value="{{ old('no_telp') }}">
+      @error('no_telp')
       <div class="invalid-feedback">
         {{ $message }}
       </div>
@@ -56,7 +56,15 @@
       </div>
       @enderror
     </div>
-    <button type="submit" class="btn btn-primary">Tambah Akun</button>
+    <hr class="divider">
+    <div class="row justify-content-between">
+      <div class="col-4">
+        <a href="/dashboard/users" class="btn btn-success"><span data-feather="chevrons-left"></span> Kembali</a>
+      </div>
+      <div class="col-4">
+          <button type="submit" class="btn btn-primary">Tambah Akun</button>
+      </div>
+    </div>
     </form>
 </div>
     

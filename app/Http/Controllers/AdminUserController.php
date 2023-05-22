@@ -36,7 +36,7 @@ class AdminUserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'username' => ['required', 'min:3', 'max:255', 'unique:users'],
+            'no_telp' => ['required', 'min:8', 'max:255'],
             'divisi_id' => 'required',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
@@ -57,10 +57,10 @@ class AdminUserController extends Controller
      */
     public function show(user $user)
     {
-        // return view('dashboard.users.show',[
-        //     'user' => $user
-        // ]);
-        dd($user);
+        return view('dashboard.users.show',[
+            'user' => $user
+        ]);
+        
     }
 
     /**
@@ -81,6 +81,7 @@ class AdminUserController extends Controller
     {
         $rules =[
             'name' => 'required|max:255',
+            'no_telp' => 'required|min:8|max:255',
             'divisi_id' => 'required',
             'password' => 'required|min:5|max:255'
         ];
@@ -96,7 +97,7 @@ class AdminUserController extends Controller
         User::where('id', $user->id)
             ->update($validatedData);
 
-        session()->flash('status', 'Akun Berhasil Di-Update!');
+        session()->flash('status', 'Akun Berhasil Diperbaharui!');
 
         return redirect('/dashboard/users');
     }

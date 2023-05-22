@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
-        'username',
+        'no_telp',
         'divisi_id',
         'email',
         'password',
@@ -39,7 +39,7 @@ class User extends Authenticatable
         return $this->belongsTo(Divisi::class);
     }
     
-    public function beritaacara(){
+    public function beritaAcara(){
         return $this->hasMany(BeritaAcara::class);
     }
 

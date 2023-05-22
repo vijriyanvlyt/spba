@@ -19,6 +19,15 @@
       @enderror
     </div>
     <div class="mb-3">
+      <label for="no_telp" class="form-label">Nomor Telepon</label>
+      <input type="text" class="form-control @error('no_telp')is-invalid @enderror" id="no_telp" name="no_telp" required value="{{ old('no_telp', $user->no_telp) }}">
+      @error('no_telp')
+      <div class="invalid-feedback">
+        {{ $message }}
+      </div>
+      @enderror
+    </div>
+    <div class="mb-3">
       <label for="divisi" class="form-label">Divisi</label>
       <select class="form-select" name="divisi_id">
         @foreach ($divisis as $divisi)
@@ -48,7 +57,14 @@
       </div>
       @enderror
     </div>
-    <button type="submit" class="btn btn-primary">Update</button>
+    <div class="row justify-content-between">
+      <div class="col-4">
+          <a href="/dashboard/users" class="btn btn-success"><span data-feather="chevrons-left"></span> Kembali</a>
+      </div>
+      <div class="col-4">
+          <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+  </div>
     </form>
 </div>
     

@@ -6,7 +6,7 @@
 </div>
 
 
-    <form class="row g-3" method="post" action="/dashboard/uploadarsip">
+    <form class="row g-3" method="post" action="/dashboard/beritaAcaras">
     @csrf
     <div class="col-md-6">
       <label for="tanggal_kesepakatan" class="form-label">Tanggal</label>
@@ -18,7 +18,7 @@
       @enderror
     </div>
     <div class="col-md-6">
-      <label for="nomor_surat" class="form-label">Nomor Arsip</label>
+      <label for="nomor_surat" class="form-label">Nomor Surat</label>
       <input type="text" class="form-control @error('nomor_surat')is-invalid @enderror" id="nomor_surat" name="nomor_surat" required value="{{ old('nomor_surat') }}">
       @error('nomor_surat')
       <div class="invalid-feedback">
@@ -55,8 +55,14 @@
         </div>
         @enderror
     </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Buat Berita Acara</button>
+    <hr class="divider">
+    <div class="row justify-content-between">
+      <div class="col-4">
+        <a href="/dashboard/beritaAcaras" class="btn btn-warning"><span data-feather="chevrons-left"></span> Kembali</a>
+      </div>
+      <div class="col-4">
+          <button type="submit" class="btn btn-primary">Buat Berita Acara</button>
+      </div>
     </div>
     </form>
 
